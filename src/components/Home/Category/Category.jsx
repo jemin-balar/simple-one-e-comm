@@ -6,6 +6,7 @@ const Category = ({ categories }) => {
   const navigate = useNavigate();
   return (
     <>
+      <h6 id="componentToScrollTo">Our Category</h6>
       <div className="shop-bt-category">
         <div className="categories">
           {categories?.data?.map((item) => {

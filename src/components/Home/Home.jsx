@@ -18,14 +18,12 @@ const Home = () => {
 
   const getCategories = () => {
     fetchDatFromApi("/api/categories?populate=*").then((res) => {
-      console.log(res);
       setCategories(res);
     });
   };
 
   const getProducts = () => {
     fetchDatFromApi("/api/products?populate=*").then((res) => {
-      console.log(res);
       setProducts(res);
     });
   };

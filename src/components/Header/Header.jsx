@@ -28,6 +28,10 @@ const Header = () => {
     }
   };
 
+  const scrooltocategory = () => {
+    document.getElementById("componentToScrollTo").scrollIntoView();
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
@@ -38,8 +42,14 @@ const Header = () => {
         <div className="header-content">
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
-            <li>About</li>
-            <li>Category</li>
+            <li
+              onClick={() =>
+                document.getElementById("newslettercomponents").scrollIntoView()
+              }
+            >
+              About
+            </li>
+            <li onClick={scrooltocategory}>Category</li>
           </ul>
           <div className="center" onClick={() => navigate("/")}>
             Simples-one

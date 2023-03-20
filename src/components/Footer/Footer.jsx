@@ -6,7 +6,7 @@ import Payment from "../../assets/payments.png";
 const Footer = () => {
   return (
     <>
-      <footer className="footer">
+      <footer className="footer" id="newslettercomponents">
         <div className="footer-content">
           <div className="col">
             <div className="title">About</div>
