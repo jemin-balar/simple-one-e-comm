@@ -2,23 +2,26 @@ import "./Category.scss";
 
 import Cat1 from "../../../assets/category/cat-1.jpg";
 
-const Category = () => {
+const Category = ({ categories }) => {
   return (
     <>
       <div className="shop-bt-category">
         <div className="categories">
-          <div className="category">
-            <img src={Cat1} alt="" />
-          </div>
-          <div className="category">
-            <img src={Cat1} alt="" />
-          </div>
-          <div className="category">
-            <img src={Cat1} alt="" />
-          </div>
-          <div className="category">
-            <img src={Cat1} alt="" />
-          </div>
+          {categories?.data?.map((item) => {
+            return (
+              <>
+                <div key={item?.id} className="category">
+                  <img
+                    src={
+                      "http://localhost:1337" +
+                      item?.attributes?.img?.data?.attributes?.url
+                    }
+                    alt=""
+                  />
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
     </>

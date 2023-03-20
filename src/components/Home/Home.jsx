@@ -1,17 +1,42 @@
+import { useEffect, useContext } from "react";
 import "./Home.scss";
 
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
 import Products from "../Products/Products";
+import { fetchDatFromApi } from "../../utils/api";
+import { Context } from "../../utils/context";
 
 const Home = () => {
+  const { categories, setCategories, products, setProducts } =
+    useContext(Context);
+
+  useEffect(() => {
+    getCategories();
+    getProducts();
+  }, []);
+
+  const getCategories = () => {
+    fetchDatFromApi("/api/categories?populate=*").then((res) => {
+      console.log(res);
+      setCategories(res);
+    });
+  };
+
+  const getProducts = () => {
+    fetchDatFromApi("/api/products?populate=*").then((res) => {
+      console.log(res);
+      setProducts(res);
+    });
+  };
+
   return (
     <div>
       <Banner />
       <div className="main-content">
         <div className="layout">
-          <Category />
-          <Products heaingText="Popular Products" />
+          <Category categories={categories} />
+          <Products products={products} heaingText="Popular Products" />
         </div>
       </div>
     </div>
