@@ -5,12 +5,8 @@ import { Context } from "../../../utils/context";
 import "./CartItem.scss";
 
 const CartItem = () => {
-  const {
-    cartItems,
-    handleAddToCart,
-    handleRemovFromCart,
-    handleCartProductQuantity,
-  } = useContext(Context);
+  const { cartItems, handleRemovFromCart, handleCartProductQuantity } =
+    useContext(Context);
   return (
     <div className="cart-products">
       {cartItems.map((item) => (

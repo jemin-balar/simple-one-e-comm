@@ -6,6 +6,7 @@ import Category from "./components/Category/Category";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import AppContext from "./utils/context";
+import Success from "./components/SuccessPayment/Success";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/category/:id" element={<Category />} />
           <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="*" element={<h3>NO PAGE FOUND</h3>} />
         </Routes>
         <Newsletter />
         <Footer />

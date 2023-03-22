@@ -28,11 +28,17 @@ const AppContext = ({ children }) => {
   }, [cartItems]);
 
   const handleAddToCart = (product, quantity) => {
+    //product hase no cart to return index = -1
+    // PRODUCT HAS TO CART TO RETURN INDEX = PRODUCT.INDEX EX.. FIRSTPRODUCT ADD SO INDEX HAS BEEN = 0 SECONDPRODUCT ADD SO INDEX HAS BEEN = 1 AND FIRSTPRODUCT ADD SO INDEX HAS BEEN = 0 MEANS PRODUCT INDEX RETURN
     let items = [...cartItems];
     let index = items.findIndex((p) => p.id === product.id);
+    console.log(index);
+    // PRODUCT ALREDY ADDED TO CART
     if (index !== -1) {
       items[index].attributes.quantity += quantity;
-    } else {
+    }
+    //PRODUCT FIRST TIME ADD
+    else {
       product.attributes.quantity = quantity;
       items = [...items, product];
     }

@@ -26,7 +26,6 @@ const Cart = ({ setShowCart }) => {
       const res = await makePaymentsRequest.post("/api/orders", {
         products: cartItems,
       });
-
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       });
@@ -50,7 +49,9 @@ const Cart = ({ setShowCart }) => {
             <div className="empty-cart">
               <BsCartX />
               <span>No Products In The Cart</span>
-              <button className="return-cta">Return To Product</button>
+              <button className="return-cta" onClick={() => navigate("/")}>
+                Return To Product
+              </button>
             </div>
           )}
           {!!cartItems.length && (

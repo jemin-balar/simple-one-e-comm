@@ -17,7 +17,7 @@ const Header = () => {
   const [search, setSearch] = useState(false);
 
   const navigate = useNavigate();
-  const { cartItems, cartCount } = useContext(Context);
+  const { cartCount } = useContext(Context);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`main-header ${scrooled ? `sticky-header` : ""}`}>
+      <header className={`main-header ${scrooled && `sticky-header`}`}>
         <div className="header-content">
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
