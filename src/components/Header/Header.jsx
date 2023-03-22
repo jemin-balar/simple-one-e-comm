@@ -52,7 +52,7 @@ const Header = () => {
             <li onClick={scrooltocategory}>Category</li>
           </ul>
           <div className="center" onClick={() => navigate("/")}>
-            Simples-one
+            Simple-one
           </div>
           <div className="right">
             <TbSearch onClick={() => setSearch(true)} />

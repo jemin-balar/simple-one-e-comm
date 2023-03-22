@@ -38,6 +38,8 @@
             font-size: 22px;
             font-weight: 700;
             cursor: pointer;
+            font-family: cursive;
+            text-shadow: 3px 3px 3px rgb(0, 220, 312);
             @include md{
                 font-size: 34px;
                 position: absolute;
