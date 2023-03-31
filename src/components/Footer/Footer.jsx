@@ -34,12 +34,12 @@ const Footer = () => {
             </div>
           </div>
           <div className="col">
-            <div className="title">Category</div>
+            <div className="title">Categorys</div>
             <span className="text">Headphones</span>
             <span className="text">Smart Watches</span>
             <span className="text">Bluetooth Speakers</span>
             <span className="text">Wireless Earbuds</span>
-            <span className="text">Home Theatre</span>
+            <span className="text">Home Theater</span>
             <span className="text">Projectors</span>
           </div>
           <div className="col">
